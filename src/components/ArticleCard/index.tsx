@@ -1,7 +1,14 @@
 import { ArticleSummary } from '@/models/ArticleSummary'
 import { VStack } from '@/utils/components/Stack'
 import { Link } from 'react-router-dom'
-import { articleCard, articleCardEmpty, articleCardList, body, date, title } from './index.css'
+import {
+  articleCard,
+  articleCardEmpty,
+  articleCardList,
+  body,
+  date,
+  title,
+} from './index.css'
 
 const dateToString = (date: Date): string => {
   const year = date.getFullYear()

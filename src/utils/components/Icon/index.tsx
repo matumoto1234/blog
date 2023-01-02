@@ -49,9 +49,7 @@ export type ChevronIconProps = {
   disable: boolean
 }
 
-export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({
-  disable,
-}) => {
+export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({ disable }) => {
   if (disable) {
     return (
       <div className={chevronLeftIconDisabled}>
@@ -66,9 +64,7 @@ export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({
   )
 }
 
-export const ChevronRightIcon: React.FC<ChevronIconProps> = ({
-  disable,
-}) => {
+export const ChevronRightIcon: React.FC<ChevronIconProps> = ({ disable }) => {
   if (disable) {
     return (
       <div className={chevronRightIconDisabled}>

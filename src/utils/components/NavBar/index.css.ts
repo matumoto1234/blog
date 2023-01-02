@@ -24,7 +24,7 @@ export const navLinkList = style({
 })
 
 export const navLink = style({
-  height: '100%'
+  height: '100%',
 })
 
 export const pinIconButton = style({

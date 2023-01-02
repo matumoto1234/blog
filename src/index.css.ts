@@ -5,7 +5,7 @@ globalStyle(':root', {
   background: color.primarySolidThinNormal,
   fontFamily: 'noto-sans-jp, sans-serif',
   color: color.navy,
-  minHeight: '100vh'
+  minHeight: '100vh',
 })
 
 globalStyle('body', {

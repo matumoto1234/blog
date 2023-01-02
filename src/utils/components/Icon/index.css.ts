@@ -73,4 +73,3 @@ export const zennIcon = style({
 export const atcoderIcon = style({
   ...iconBase,
 })
-

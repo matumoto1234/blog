@@ -1,4 +1,4 @@
-import { footer } from "./index.css"
+import { footer } from './index.css'
 
 export const Footer: React.FC<{
   children: React.ReactNode

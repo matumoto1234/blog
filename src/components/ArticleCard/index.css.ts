@@ -15,7 +15,7 @@ export const articleCard = style({
   selectors: {
     '&:hover': {
       outline: `1px solid ${color.primarySolid}`,
-    }
+    },
   },
 })
 
