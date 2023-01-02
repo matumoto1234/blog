@@ -11,4 +11,10 @@ export default defineConfig({
       '@/': '/src/',
     },
   },
+  build: {
+    chunkSizeWarningLimit: 100000000,
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
 })
