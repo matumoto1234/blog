@@ -1,26 +1,78 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "react/jsx-uses-react": "off",
-        "react/react-in-jsx-scope": "off"
+  "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
     }
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "semi": ["off", "always"]
+  },
+  "import/order": [
+    "error",
+    {
+      "groups": [
+        "builtin",
+        "external",
+        "internal",
+        "parent",
+        "sibling",
+        "index",
+        "object",
+        "type"
+      ],
+      "newlines-between": "never", // import groups の間 1行あける
+      "pathGroupsExcludedImportTypes": ["builtin"],
+      "alphabetize": { "order": "asc", "caseInsensitive": true }, // 大文字小文字関係なくアルファベット順にしたい
+      "pathGroups": [
+        {
+          "pattern": "src/models/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "src/api/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "src/util/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "src/pages/**",
+          "group": "internal",
+          "position": "before"
+        },
+        {
+          "pattern": "src/assets/**",
+          "group": "internal",
+          "position": "before"
+        }
+      ]
+    }
+  ]
 }
