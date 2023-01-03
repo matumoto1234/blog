@@ -4,6 +4,7 @@ export const ul = style({
   listStyleType: 'disc',
   listStylePosition: 'inside',
   margin: '20px 0px',
+  paddingInlineStart: '10px',
   selectors: {
     'li &': {
       margin: '0px',
