@@ -12,6 +12,7 @@ import { Paragraph } from './components/Paragraph'
 import { Pre } from './components/Pre'
 import { Table, Td, Th } from './components/Table'
 import { markdownViewer } from './index.css'
+import { Img } from './components/Img'
 
 export const MarkdownViewer: React.FC<{
   markdownText: string
@@ -39,6 +40,7 @@ export const MarkdownViewer: React.FC<{
         table: Table,
         th: Th,
         td: Td,
+        img: Img,
       }}
     >
       {markdownText}
