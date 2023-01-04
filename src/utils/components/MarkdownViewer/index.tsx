@@ -13,6 +13,7 @@ import { Pre } from './components/Pre'
 import { Table, Td, Th } from './components/Table'
 import { markdownViewer } from './index.css'
 import { Img } from './components/Img'
+import rehypeRaw from 'rehype-raw'
 
 export const MarkdownViewer: React.FC<{
   markdownText: string
@@ -20,7 +21,7 @@ export const MarkdownViewer: React.FC<{
   return (
     <ReactMarkdown
       className={markdownViewer}
-      rehypePlugins={[rehypeKatex]}
+      rehypePlugins={[rehypeKatex, rehypeRaw]}
       remarkPlugins={[remarkGfm, remarkMath]}
       components={{
         h1: H1,
