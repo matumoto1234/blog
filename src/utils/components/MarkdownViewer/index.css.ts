@@ -7,4 +7,5 @@ export const markdownViewer = style({
   background: color.white,
   padding: '32px',
   borderRadius: 12,
+  lineBreak: 'anywhere',
 })
