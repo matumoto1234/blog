@@ -3,11 +3,13 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { AboutPage } from './pages/AboutPage'
 import { ArticlePage } from './pages/ArticlePage'
 import { HomePage } from './pages/HomePage'
+import { NotFoundPage } from './pages/NotFoundPage'
 
 export enum routes {
   HOME = '/home',
   ABOUT = '/about',
   ARTICLE = '/article/:articleId',
+  NOT_FOUND = '*',
 }
 
 const router = createBrowserRouter([
@@ -26,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: routes.ARTICLE,
     element: <ArticlePage />,
+  },
+  {
+    path: routes.NOT_FOUND,
+    element: <NotFoundPage />,
   },
 ])
 
