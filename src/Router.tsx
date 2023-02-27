@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { AboutPage } from './pages/AboutPage'
 import { ArticlePage } from './pages/ArticlePage'
+import { EditorPage } from './pages/EditorPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 
@@ -9,6 +10,7 @@ export enum routes {
   HOME = '/home',
   ABOUT = '/about',
   ARTICLE = '/article/:articleId',
+  EDITOR = '/editor/:articleId',
   NOT_FOUND = '*',
 }
 
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
     element: <ArticlePage />,
   },
   {
+    path: routes.EDITOR,
+    element: <EditorPage />,
+  },
+  {
     path: routes.NOT_FOUND,
     element: <NotFoundPage />,
   },
@@ -45,10 +51,13 @@ const getPathName = (): string => {
 
 export const isInHome = (): boolean => {
   const path = getPathName()
-  return path.slice(0, 5) === routes.HOME
+  return path.slice(0, routes.HOME.length) === routes.HOME
 }
 
 export const isInAbout = (): boolean => {
   const path = getPathName()
-  return path.slice(0, 6) === routes.ABOUT
+  return (
+    path.slice(0, routes.ABOUT.length) === routes.ABOUT &&
+    path.split('/').length === 2 // e.g. '/hoge'.split('/') -> ['', 'hoge']
+  )
 }
