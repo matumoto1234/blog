@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { useHref, useLocation } from 'react-router-dom'
 import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { AboutPage } from './pages/AboutPage'
 import { ArticlePage } from './pages/ArticlePage'
@@ -10,7 +10,7 @@ export enum routes {
   HOME = '/home',
   ABOUT = '/about',
   ARTICLE = '/article/:articleId',
-  EDITOR = '/editor/:articleId',
+  EDITOR = '/editor',
   NOT_FOUND = '*',
 }
 
@@ -45,8 +45,13 @@ export const AppRouter: React.FC = () => {
   return <RouterProvider router={router} />
 }
 
-const getPathName = (): string => {
+export const getPathName = (): string => {
   return useLocation().pathname
+}
+
+export const getOrigin = (): string => {
+  const url = new URL(window.location.href)
+  return url.origin
 }
 
 export const isInHome = (): boolean => {
