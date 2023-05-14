@@ -16,7 +16,6 @@ export const Page: React.FC<{
         <meta property="og:url" content={urlJoin(getOrigin(), getPathName())} />
         <meta property="og:site_name" content="matumoto's blog" />
         <meta property="og:description" content="matumotoのブログ" />
-        <meta name="twitter:card" content="summary" />
       </Helmet>
       <div className={pageInner}>{children}</div>
     </div>
