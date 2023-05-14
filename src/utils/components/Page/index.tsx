@@ -9,15 +9,9 @@ export const Page: React.FC<{
 }> = ({ children, title }) => {
   return (
     <div className={page}>
-      <Helmet>
-        <title>{title}</title>
-        <meta property="og:title" content={title} />
-        <meta property="og:type" content="blog" />
-        <meta property="og:url" content={urlJoin(getOrigin(), getPathName())} />
-        <meta property="og:site_name" content="matumoto's blog" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@matumoto_1234" />
-      </Helmet>
+      <Helmet
+        title={title}
+      />
       <div className={pageInner}>{children}</div>
     </div>
   )
