@@ -20,6 +20,7 @@
     "@types/js-yaml": "^4.0.5",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-syntax-highlighter": "^15.5.5",
+    "@uiw/react-md-editor": "^3.20.2",
     "@vanilla-extract/css": "^1.9.2",
     "@vanilla-extract/recipes": "^0.3.0",
     "@vanilla-extract/vite-plugin": "^3.7.0",
@@ -38,6 +39,7 @@
     "rehype-raw": "^6.1.1",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "url-join": "^5.0.0",
     "vite-plugin-svgr": "^2.4.0"
   },
   "devDependencies": {
