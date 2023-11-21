@@ -1,10 +1,21 @@
-// コメントにはDisqusを使用する
-// scriptでのdisqus.js読み込み以外はDisqusから提供されているコードをコピーしたもの
-export const Comments: React.FC = () => {
+import { DiscussionEmbed } from 'disqus-react'
+
+type CommentsProps = {
+  title: string
+}
+
+export const Comments: React.FC<CommentsProps> = ({ title }) => {
+  const crumbs = window.location.pathname.split('/')
+
+  const disqusConfig = {
+    url: window.location.href,
+    title,
+    identifier: crumbs[crumbs.length - 1],
+  }
+
   return (
     <>
-      <div id="disqus_thread"></div>
-      <script src="/src/utils/lib/disqus.js" />
+      <DiscussionEmbed shortname="matumoto1234-com" config={disqusConfig} />
       <noscript>
         Please enable JavaScript to view the
         <a href="https://disqus.com/?ref_noscript">
