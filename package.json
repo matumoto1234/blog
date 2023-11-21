@@ -25,6 +25,7 @@
     "@vanilla-extract/recipes": "^0.3.0",
     "@vanilla-extract/vite-plugin": "^3.7.0",
     "classnames": "^2.3.2",
+    "disqus-react": "^1.1.5",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "js-yaml": "^4.1.0",

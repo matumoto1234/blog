@@ -96,9 +96,9 @@ export const ArticlePage: React.FC = () => {
               <MarkdownViewer markdownText={article.markdownText} />
             </article>
             <Spacer size={80} />
-            <Comments />
           </VStack>
         </main>
+        <Comments title={article.title} />
       </Page>
       <Footer>
         <CopyRight />
