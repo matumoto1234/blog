@@ -12,6 +12,8 @@ import { ReactComponent as HatenaSvg } from '@/assets/hatena.svg'
 import { ReactComponent as ConnpassSvg } from '@/assets/connpass.svg'
 import { ReactComponent as ZennSvg } from '@/assets/zenn.svg'
 import { ReactComponent as AtcoderSvg } from '@/assets/atcoder.svg'
+import { ReactComponent as NotificationActiveSvg } from '@/assets/notification-active.svg'
+import { ReactComponent as NotificationOffSvg } from '@/assets/notification-off.svg'
 import {
   chevronLeftIcon,
   chevronLeftIconDisabled,
@@ -28,8 +30,24 @@ import {
   twitterIcon,
   zennIcon,
   atcoderIcon,
+  notificationIcon,
 } from './index.css'
 import { color } from '@/utils/styles/variables.css'
+import React from 'react'
+
+export const NotificationIcon: React.FC<{
+  active: boolean
+}> = ({ active }) => {
+  return (
+    <div className={notificationIcon}>
+      {active ? (
+        <NotificationActiveSvg fill={color.navy} />
+      ) : (
+        <NotificationOffSvg fill={color.gray} />
+      )}
+    </div>
+  )
+}
 
 export const PinIcon: React.FC<{
   enable: boolean

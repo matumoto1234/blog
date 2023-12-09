@@ -10,6 +10,10 @@ const iconBase = {
   justifyContent: 'center',
 }
 
+export const notificationIcon = style({
+  ...iconBase,
+})
+
 export const pinIcon = style({
   ...iconBase,
 })

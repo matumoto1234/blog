@@ -27,9 +27,17 @@ export const navLink = style({
   height: '100%',
 })
 
-export const pinIconButton = style({
+const iconButtonBase = {
   background: 'none',
   border: 'none',
   cursor: 'pointer',
   padding: '0',
+}
+
+export const notificationIconButton = style({
+  ...iconButtonBase,
+})
+
+export const pinIconButton = style({
+  ...iconButtonBase,
 })
