@@ -69,3 +69,9 @@ export const fontFamily = {
     fontFamily: 'monospace',
   }),
 }
+
+export const letterSpacing = {
+  px0_8: style({
+    letterSpacing: '0.8px',
+  }),
+}
