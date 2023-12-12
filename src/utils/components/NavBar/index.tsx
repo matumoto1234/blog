@@ -17,8 +17,13 @@ import {
 import { Tooltip } from '../Tooltip'
 import { initializeApp } from 'firebase/app'
 import { getMessaging, onBackgroundMessage } from 'firebase/messaging/sw'
-import { getToken, onMessage } from 'firebase/messaging'
+import { getToken, isSupported, onMessage } from 'firebase/messaging'
 import { fcmConfig } from '@/utils/lib/fcm'
+
+const suppotsNotification = (): boolean => {
+  // https://developer.mozilla.org/ja/docs/Web/API/Notifications_API/Using_the_Notifications_API
+  return "Notification" in window;
+}
 
 const useNavBar = (): {
   sticky: boolean
@@ -33,35 +38,37 @@ const useNavBar = (): {
   }
 
   const [notificationActive, setNotificationActive] = useState(
-    Notification.permission === 'granted'
+    suppotsNotification() && Notification.permission === 'granted'
   )
 
   const toggleNotificationActive = () => {
-    if (Notification.permission === 'granted') {
+    if (suppotsNotification() && Notification.permission === 'granted') {
       setNotificationActive(!notificationActive)
     } else {
-      window.navigator.serviceWorker
-        .register('/firebase-messaging-sw.js')
-        .then((sw) => {
-          const app = initializeApp(fcmConfig)
-          const messaging = getMessaging(app)
-          getToken(messaging, {
-            serviceWorkerRegistration: sw,
+      isSupported().then(() => {
+        window.navigator.serviceWorker
+          .register('/firebase-messaging-sw.js')
+          .then((sw) => {
+            const app = initializeApp(fcmConfig)
+            const messaging = getMessaging(app)
+            getToken(messaging, {
+              serviceWorkerRegistration: sw,
+            })
+              .then((_) => {
+                if (Notification.permission === 'granted') {
+                  setNotificationActive(true)
+                } else {
+                  setNotificationActive(false)
+                }
+              })
+              .catch((err) => {
+                console.error(err)
+              })
           })
-            .then((_) => {
-              if (Notification.permission === 'granted') {
-                setNotificationActive(true)
-              } else {
-                setNotificationActive(false)
-              }
-            })
-            .catch((err) => {
-              console.error(err)
-            })
-        })
-        .catch((err) => {
-          console.error(err)
-        })
+          .catch((err) => {
+            console.error(err)
+          })
+      })
     }
   }
 
