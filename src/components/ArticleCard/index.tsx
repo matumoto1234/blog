@@ -12,7 +12,7 @@ import {
 
 const dateToString = (date: Date): string => {
   const year = date.getFullYear()
-  const month = date.getMonth()
+  const month = date.getMonth() + 1 // 0-indexed to 1-indexed
   const day = date.getDate()
   return `${year}/${month}/${day}`
 }
