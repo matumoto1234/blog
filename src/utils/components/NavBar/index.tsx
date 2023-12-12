@@ -20,6 +20,11 @@ import { getMessaging, onBackgroundMessage } from 'firebase/messaging/sw'
 import { getToken, isSupported, onMessage } from 'firebase/messaging'
 import { fcmConfig } from '@/utils/lib/fcm'
 
+const suppotsNotification = (): boolean => {
+  // https://developer.mozilla.org/ja/docs/Web/API/Notifications_API/Using_the_Notifications_API
+  return "Notification" in window;
+}
+
 const useNavBar = (): {
   sticky: boolean
   toggleSticky: () => void
@@ -33,11 +38,11 @@ const useNavBar = (): {
   }
 
   const [notificationActive, setNotificationActive] = useState(
-    Notification.permission === 'granted'
+    suppotsNotification() && Notification.permission === 'granted'
   )
 
   const toggleNotificationActive = () => {
-    if (Notification.permission === 'granted') {
+    if (suppotsNotification() && Notification.permission === 'granted') {
       setNotificationActive(!notificationActive)
     } else {
       isSupported().then(() => {
