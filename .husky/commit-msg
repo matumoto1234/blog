@@ -1,0 +1,49 @@
+#!/usr/bin/env sh
+
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo -e "\033[37;1m🪝 Running Git Hooks: commit-msg\033[0m\n"
+
+# コミットメッセージを定義
+readonly commit_msg="$(cat "$1")"
+
+# 終了コードを定義。0: OK, 1: NG
+exit_code=0
+
+# Prefixの存在チェック
+## 必要なPrefixを定義
+correct_prefixes=("feat" "fix" "docs" "style" "refactor" "pref" "test" "chore")
+
+## 各要素に": "を追加
+for i in "${!correct_prefixes[@]}"; do
+  correct_prefixes[i]="${correct_prefixes[i]}: "
+done
+
+## `grep -E`で配列からOR検索をするため、半角スペース(" ")の区切り文字をパイプ("|")に変更
+prefixes="$(
+  IFS="|"
+  echo "${correct_prefixes[*]}"
+)"
+
+if echo "$commit_msg" | grep -E --no-message "${prefixes}" > /dev/null; then
+  echo -e "✅\033[32;22mOK\033[0m : Prefixの存在チェック\n"
+else
+  echo -e "\033[31;22m⚠️NG\033[0m : Prefixの存在チェック:"
+  echo -e "  コミットメッセージにPrefixが含まれていません"
+  echo -e "  Allowed prefix:"
+  echo -e "    ${correct_prefixes[*]}\n"
+  exit_code=1
+fi
+
+# issue番号の存在チェック
+if echo "$commit_msg" | grep --no-message "#[1-9]" > /dev/null; then
+  echo -e "✅\033[32;22mOK\033[0m : issue番号の存在チェック\n"
+else
+  echo -e "\033[31;22m⚠️NG\033[0m : issue番号の存在チェック:"
+  echo -e "  コミットメッセージにissue番号が含まれていません"
+  echo -e "  Format: #[issue_number]"
+  echo -e "  Example: #1234\n"
+  exit_code=1
+fi
+
+exit ${exit_code}

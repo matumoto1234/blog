@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@jridgewell/sourcemap-codec': ^1.4.15
   '@mojotech/json-type-validation': ^3.1.0
   '@originjs/vite-plugin-commonjs': ^1.0.3
   '@types/js-yaml': ^4.0.5
@@ -23,6 +24,7 @@ specifiers:
   eslint-plugin-react: ^7.31.11
   eslint-plugin-unused-imports: ^2.0.0
   firebase: ^10.7.1
+  husky: ^8.0.0
   js-yaml: ^4.1.0
   prettier: ^2.8.1
   react: ^18.2.0
@@ -42,6 +44,7 @@ specifiers:
   vite-plugin-svgr: ^2.4.0
 
 dependencies:
+  '@jridgewell/sourcemap-codec': 1.4.15
   '@mojotech/json-type-validation': 3.1.0
   '@originjs/vite-plugin-commonjs': 1.0.3
   '@types/js-yaml': 4.0.5
@@ -80,6 +83,7 @@ devDependencies:
   '@vitejs/plugin-react': 2.2.0_vite@3.2.5
   eslint: 8.31.0
   eslint-plugin-react: 7.31.11_eslint@8.31.0
+  husky: 8.0.3
   react-syntax-highlighter: 15.5.0_react@18.2.0
   typescript: 4.9.4
   vite: 3.2.5
@@ -1079,14 +1083,14 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
+      '@jridgewell/sourcemap-codec': 1.4.15
 
   /@jridgewell/gen-mapping/0.3.2:
     resolution: {integrity: sha512-mh65xKQAzI6iBcFzwv28KVWSmCkdRBWoOh+bYQGW3+6OZvbbN3TqMGo5hqYxQniRcH9F2VZIoJCm4pa3BPDK/A==}
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
+      '@jridgewell/sourcemap-codec': 1.4.15
       '@jridgewell/trace-mapping': 0.3.17
 
   /@jridgewell/resolve-uri/3.1.0:
@@ -1099,6 +1103,9 @@ packages:
 
   /@jridgewell/sourcemap-codec/1.4.14:
     resolution: {integrity: sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==}
+
+  /@jridgewell/sourcemap-codec/1.4.15:
+    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
 
   /@jridgewell/trace-mapping/0.3.17:
     resolution: {integrity: sha512-MCNzAp77qzKca9+W/+I0+sEpaUnZoeasnghNeVc41VZCEKaCH73Vq3BZZ/SzWIgrqE4H4ceI+p+b6C0mHf9T4g==}
@@ -3212,6 +3219,12 @@ packages:
   /http-parser-js/0.5.8:
     resolution: {integrity: sha512-SGeBX54F94Wgu5RH3X5jsDtf4eHyRogWX1XGT3b4HuW3tQPM4AaBzoUji/4AAJNXCEOWZ5O0DgZmJw1947gD5Q==}
     dev: false
+
+  /husky/8.0.3:
+    resolution: {integrity: sha512-+dQSyqPh4x1hlO1swXBiNb2HzTDN1I2IGLQx1GrBuiqFJfoMrnZWwVmatvSiO+Iz8fBUnf+lekwNo4c2LlXItg==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /idb/7.0.1:
     resolution: {integrity: sha512-UUxlE7vGWK5RfB/fDwEGgRf84DY/ieqNha6msMV99UsEMQhJ1RwbCd8AYBj3QMgnE3VZnfQvm4oKVCJTYlqIgg==}
