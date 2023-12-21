@@ -1,4 +1,4 @@
-import { fcmConfig, vapidKey } from '@/utils/lib/fcm'
+import { fcmConfig } from '@/utils/lib/fcm'
 import { initializeApp } from 'firebase/app'
 import { isSupported, getMessaging, getToken } from 'firebase/messaging'
 import { useState } from 'react'
@@ -27,7 +27,6 @@ export const useNotificationButton = () => {
         // 通知権限がdefaultの場合は許可を求めてくれる
         // https://firebase.google.com/docs/reference/js/messaging_?hl=ja#gettoken
         getToken(messaging, {
-          vapidKey: vapidKey,
           serviceWorkerRegistration: sw,
         })
           .then((_) => {
