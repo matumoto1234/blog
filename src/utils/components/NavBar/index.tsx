@@ -1,6 +1,6 @@
 import { isInAbout, isInHome } from '@/Router'
 import { Header } from '@/utils/components/Header'
-import { NotificationIcon, PinIcon } from '@/utils/components/Icon'
+import { PinIcon } from '@/utils/components/Icon'
 import { NavigationLink } from '@/utils/components/NavigationLink'
 import { Spacer, StretchSpacer } from '@/utils/components/Spacer'
 import { HStack } from '@/utils/components/Stack'
@@ -10,26 +10,17 @@ import {
   navBarItemContainer,
   navLink,
   navLinkList,
-  notificationIconButton,
   pinIconButton,
   stickyNavBar,
 } from './index.css'
-import { Tooltip } from '../Tooltip'
-import { initializeApp } from 'firebase/app'
-import { getMessaging, onBackgroundMessage } from 'firebase/messaging/sw'
-import { getToken, isSupported, onMessage } from 'firebase/messaging'
-import { fcmConfig } from '@/utils/lib/fcm'
-
-const suppotsNotification = (): boolean => {
-  // https://developer.mozilla.org/ja/docs/Web/API/Notifications_API/Using_the_Notifications_API
-  return "Notification" in window;
-}
+import {
+  NotificationButton,
+  useNotificationButton,
+} from '../NotificationButton'
 
 const useNavBar = (): {
   sticky: boolean
   toggleSticky: () => void
-  notificationActive: boolean
-  toggleNotificationActive: () => void
 } => {
   const [sticky, setSticky] = useState(false)
 
@@ -37,52 +28,17 @@ const useNavBar = (): {
     setSticky(!sticky)
   }
 
-  const [notificationActive, setNotificationActive] = useState(
-    suppotsNotification() && Notification.permission === 'granted'
-  )
-
-  const toggleNotificationActive = () => {
-    if (suppotsNotification() && Notification.permission === 'granted') {
-      setNotificationActive(!notificationActive)
-    } else {
-      isSupported().then(() => {
-        window.navigator.serviceWorker
-          .register('/firebase-messaging-sw.js')
-          .then((sw) => {
-            const app = initializeApp(fcmConfig)
-            const messaging = getMessaging(app)
-            getToken(messaging, {
-              serviceWorkerRegistration: sw,
-            })
-              .then((_) => {
-                if (Notification.permission === 'granted') {
-                  setNotificationActive(true)
-                } else {
-                  setNotificationActive(false)
-                }
-              })
-              .catch((err) => {
-                console.error(err)
-              })
-          })
-          .catch((err) => {
-            console.error(err)
-          })
-      })
-    }
-  }
-
   return {
     sticky,
     toggleSticky,
-    notificationActive,
-    toggleNotificationActive,
   }
 }
 
 export const NavBar: React.FC = () => {
-  const { sticky, toggleSticky, notificationActive, toggleNotificationActive } =
-    useNavBar()
+  const { sticky, toggleSticky } = useNavBar()
+
+  const { active: notificationActive, toggleActive: toggleNotificationActive } =
+    useNotificationButton()
 
   return (
     <Header className={sticky ? stickyNavBar : navBar}>
@@ -112,16 +68,10 @@ export const NavBar: React.FC = () => {
           </HStack>
         </nav>
         <StretchSpacer />
-        <Tooltip
-          label={notificationActive ? 'Currently active' : 'Currently off'}
-        >
-          <button
-            className={notificationIconButton}
-            onClick={toggleNotificationActive}
-          >
-            <NotificationIcon active={notificationActive} />
-          </button>
-        </Tooltip>
+        <NotificationButton
+          active={notificationActive}
+          toggleActive={toggleNotificationActive}
+        />
         <Spacer size={16} />
         <button className={pinIconButton} onClick={toggleSticky}>
           <PinIcon enable={sticky} />
