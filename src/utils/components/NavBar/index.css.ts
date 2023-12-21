@@ -34,10 +34,6 @@ const iconButtonBase = {
   padding: '0',
 }
 
-export const notificationIconButton = style({
-  ...iconButtonBase,
-})
-
 export const pinIconButton = style({
   ...iconButtonBase,
 })
