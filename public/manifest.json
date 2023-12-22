@@ -6,6 +6,11 @@
   "description": "matumoto1234のブログです",
   "icons": [
     {
+      "src": "/matumoto-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
       "src": "/matumoto.svg",
       "sizes": "512x512",
       "type": "image/svg"
