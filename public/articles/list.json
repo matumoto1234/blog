@@ -1,5 +1,11 @@
 [
   {
+    "title": "Webプッシュ通知機能をFirebaseCloudMessagingを使って実装した",
+    "date": 1702838294030,
+    "summaryBody": "この記事は Aizu Advent Calendar 2023 17 日目の記事です Web プッシュ通知機能を FirebaseCloudMessaging(FCM)を使ってこのブログに実装しました  右上のベルアイコンから on/off を操作でき、ブログが更新されたタイミングなどで通知を受け取るようにできます",
+    "articleId": "web-push-notification"
+  },
+  {
     "title": "Gopher 塾#5 に参加しました",
     "date": 1690954259655,
     "summaryBody": "この記事はGopher 塾 #5 - ジェネリクスが書けるようになろうの参加記事です  Gopher 塾自体への参加は今回が初めてで、学生ブログ枠として参加させていただきました！  イベントでは Go のジェネリクスについて、基本的な内容から新しいイディオムまで演習に取り組みながら学びました  本記事では講義内で学んだ内容をいくつか取り上げて、それ+α を書いていこうと思います",
