@@ -18,3 +18,7 @@ export const fcmConfig: {
   appId: "1:392885897153:web:34c50f90fa861363d01140",
   measurementId: "G-SCFC5JYRD5",
 }
+
+// VAPIDに使用する公開鍵
+// 詳細: https://firebase.google.com/docs/reference/js/messaging_.gettokenoptions.md?hl=ja#gettokenoptionsvapidkey
+export const vapidKey = "BDKP6UuiKI9mtcwYpCjaKDsBMTpCf2ayfhFJbA36LOB-o0GbjSY8JiUMtj7bhTm35rS-OmJwTBVwG7JQK07B2-I"

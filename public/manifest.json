@@ -1,3 +1,20 @@
 {
-  "gcm_sender_id": "103953800507"
+  "name": "matumoto1234 blog",
+  "short_name": "blog",
+  "display": "standalone",
+  "theme_color": "#f1f5f9",
+  "background_color": "#f1f5f9",
+  "description": "matumoto1234のブログです",
+  "icons": [
+    {
+      "src": "/matumoto-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/matumoto-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
