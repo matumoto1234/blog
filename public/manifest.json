@@ -2,7 +2,8 @@
   "name": "matumoto1234 blog",
   "short_name": "blog",
   "display": "standalone",
-  "background_color": "#fff",
+  "theme_color": "#f1f5f9",
+  "background_color": "#f1f5f9",
   "description": "matumoto1234のブログです",
   "icons": [
     {
