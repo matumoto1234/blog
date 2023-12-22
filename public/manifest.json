@@ -11,9 +11,9 @@
       "type": "image/png"
     },
     {
-      "src": "/matumoto.svg",
+      "src": "/matumoto-512x512.png",
       "sizes": "512x512",
-      "type": "image/svg"
+      "type": "image/png"
     }
   ]
 }
