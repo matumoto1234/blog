@@ -14,6 +14,7 @@ import { Table, Td, Th } from './components/Table'
 import { markdownViewer } from './index.css'
 import { Img } from './components/Img'
 import rehypeRaw from 'rehype-raw'
+import { Blockquote } from './components/Blockquote'
 
 export const MarkdownViewer: React.FC<{
   markdownText: string
@@ -42,6 +43,7 @@ export const MarkdownViewer: React.FC<{
         th: Th,
         td: Td,
         img: Img,
+        blockquote: Blockquote,
       }}
     >
       {markdownText}
