@@ -11,6 +11,11 @@ export const Ul: React.FC<{
 export const Li: React.FC<{
   children: React.ReactNode & React.ReactNode[]
   className?: string
-}> = ({ children, className }) => {
-  return <li className={classNames(className, li)}>{children}</li>
+  id?: string
+}> = ({ children, className, id }) => {
+  return (
+    <li className={classNames(className, li)} id={id}>
+      {children}
+    </li>
+  )
 }

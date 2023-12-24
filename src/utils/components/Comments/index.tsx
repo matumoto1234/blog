@@ -1,16 +1,17 @@
 import { DiscussionEmbed } from 'disqus-react'
+import { useParams } from 'react-router-dom'
 
 type CommentsProps = {
   title: string
 }
 
 export const Comments: React.FC<CommentsProps> = ({ title }) => {
-  const crumbs = window.location.pathname.split('/')
+  const { articleId } = useParams()
 
   const disqusConfig = {
     url: window.location.href,
     title,
-    identifier: crumbs[crumbs.length - 1],
+    identifier: articleId,
   }
 
   return (
