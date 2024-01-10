@@ -43,6 +43,9 @@ export const lineHeight = {
   per250: style({
     lineHeight: '250%',
   }),
+  per300: style({
+    lineHeight: '300%',
+  }),
 }
 
 // これに基づいた命名 : https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight#common_weight_name_mapping
