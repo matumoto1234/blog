@@ -1,7 +1,7 @@
-import { CopyRight } from '@/utils/components/CopyRight'
-import { Footer } from '@/utils/components/Footer'
-import { NavBar } from '@/utils/components/NavBar'
-import { Page } from '@/utils/components/Page'
+import { CopyRight } from 'utils/components/CopyRight'
+import { Footer } from 'utils/components/Footer'
+import { NavBar } from 'utils/components/NavBar'
+import { Page } from 'utils/components/Page'
 
 export const NotFoundPage: React.FC = () => {
   return (

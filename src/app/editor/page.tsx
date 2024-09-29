@@ -1,3 +1,5 @@
+'use client'
+
 import { ArticleTitle } from 'utils/components/ArticleTitle'
 import { CopyRight } from 'utils/components/CopyRight'
 import { Footer } from 'utils/components/Footer'

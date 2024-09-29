@@ -1,4 +1,4 @@
-import { ArticleSummary } from '@/models/ArticleSummary'
+import { ArticleSummary } from 'models/ArticleSummary'
 
 import {
   Decoder,
@@ -17,7 +17,7 @@ const articleListDecoder: Decoder<ArticleSummary[]> = array(
   })
 )
 
-export const getArticleSummaryList = async (): Promise<ArticleSummary[]> => {
+export const loadArticleSummaryList = async (): Promise<ArticleSummary[]> => {
   // TODO: 本当はAPIを叩く
   const res = await fetch('/articles/list.json')
   const data = await articleListDecoder.runPromise(await res.json())

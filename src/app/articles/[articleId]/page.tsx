@@ -1,20 +1,20 @@
-import { getArticle } from '@/api/getArticle'
-import { NavBar } from '@/utils/components/NavBar'
-import { Article } from '@/models/Article'
-import { ArticleTitle } from '@/utils/components/ArticleTitle'
-import { ArticleTitleSkeleton } from '@/utils/components/ArticleTitle/skeleton'
-import { Comments } from '@/utils/components/Comments'
-import { CopyRight } from '@/utils/components/CopyRight'
-import { Footer } from '@/utils/components/Footer'
-import { MarkdownViewer } from '@/utils/components/MarkdownViewer'
-import { MarkdownViewerSkeleton } from '@/utils/components/MarkdownViewer/skeleton'
-import { Page } from '@/utils/components/Page'
-import { Spacer } from '@/utils/components/Spacer'
-import { VStack } from '@/utils/components/Stack'
+import { getArticle } from 'api/getArticle'
+import { NavBar } from 'utils/components/NavBar'
+import { Article } from 'models/Article'
+import { ArticleTitle } from 'utils/components/ArticleTitle'
+import { ArticleTitleSkeleton } from 'utils/components/ArticleTitle/skeleton'
+import { Comments } from 'utils/components/Comments'
+import { CopyRight } from 'utils/components/CopyRight'
+import { Footer } from 'utils/components/Footer'
+import { MarkdownViewer } from 'utils/components/MarkdownViewer'
+import { MarkdownViewerSkeleton } from 'utils/components/MarkdownViewer/skeleton'
+import { Page } from 'utils/components/Page'
+import { Spacer } from 'utils/components/Spacer'
+import { VStack } from 'utils/components/Stack'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { articleTag } from './index.css'
-import { ErrorKind, ErrorWrapper, isErrorWrapper } from '@/api/errors'
+import { articleTag } from './page.css'
+import { ErrorKind, ErrorWrapper, isErrorWrapper } from 'api/errors'
+import { useParams } from 'next/navigation'
 
 const useArticlePage = (): {
   article: Article | undefined
@@ -24,7 +24,7 @@ const useArticlePage = (): {
   const [article, setArticle] = useState<Article>()
   const [loading, setLoading] = useState(false)
   const [notFound, setNotFound] = useState(false)
-  const { articleId } = useParams()
+  const { articleId } = useParams<{ articleId: string }>() ?? { articleId: '' }
 
   useEffect(() => {
     const fetcher = async (articleId: string): Promise<void> => {

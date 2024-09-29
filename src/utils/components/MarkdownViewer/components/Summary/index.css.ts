@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
 import { details } from '../Details/index.css'
-import { color } from '@/utils/styles/variables.css'
+import { color } from 'utils/styles/variables.css'
 
 export const summary = style({
   padding: '8px 16px',

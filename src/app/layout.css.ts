@@ -1,5 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css'
-import { color } from 'utils/styles/variables.css'
+import { color } from '@/utils/styles/variables.css'
 
 globalStyle(':root', {
   background: color.primarySolidThinNormal,

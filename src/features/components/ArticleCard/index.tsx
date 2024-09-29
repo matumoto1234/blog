@@ -1,6 +1,5 @@
-import { ArticleSummary } from '@/models/ArticleSummary'
-import { VStack } from '@/utils/components/Stack'
-import { Link } from 'react-router-dom'
+import { ArticleSummary } from 'models/ArticleSummary'
+import { VStack } from 'utils/components/Stack'
 import {
   articleCard,
   articleCardEmpty,
@@ -9,6 +8,7 @@ import {
   date,
   title,
 } from './index.css'
+import Link from 'next/link'
 
 const dateToString = (date: Date): string => {
   const year = date.getFullYear()
@@ -34,8 +34,8 @@ const ArticleCard: React.FC<{
 }
 
 export const ArticleCardList: React.FC<{
-  articleList: ArticleSummary[]
-}> = ({ articleList }) => {
+  articleSummaries: ArticleSummary[]
+}> = ({ articleSummaries: articleList }) => {
   return (
     <VStack className={articleCardList} style={{ gap: 32 }}>
       {articleList.map((article, i) => {
@@ -43,7 +43,7 @@ export const ArticleCardList: React.FC<{
           return <div className={articleCardEmpty} key={i} />
         }
         return (
-          <Link to={`/article/${article.articleId}`} key={i}>
+          <Link href={`/article/${article.articleId}`} key={i}>
             <ArticleCard article={article} />
           </Link>
         )

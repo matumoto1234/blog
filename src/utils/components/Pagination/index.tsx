@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import {
-  ChevronIconProps,
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  EllipsisIcon,
+  // ChevronIconProps,
+  // ChevronLeftIcon,
+  // ChevronRightIcon,
+  // EllipsisIcon,
 } from '../Icon'
 import { HStack } from '../Stack'
 import {
@@ -39,7 +39,7 @@ const PaginationButton: React.FC<{
     case PaginationButtonState.Ellipsis:
       return (
         <div className={paginationButtonEllipsis}>
-          <EllipsisIcon />
+          {/* <EllipsisIcon /> */}
         </div>
       )
 
@@ -50,7 +50,7 @@ const PaginationButton: React.FC<{
     default:
       return (
         <Link
-          to={`?page=${linkToPage}`}
+          href={`?page=${linkToPage}`}
           key={myKey}
           onClick={() => onPageChange(linkToPage)}
         >
@@ -137,7 +137,8 @@ export const Pagination: React.FC<{
         linkToPage={current - 1}
         onPageChange={onPageChange}
       >
-        <ChevronLeftIcon disable={isFirstPage} />
+        hoge
+        {/* <ChevronLeftIcon disable={isFirstPage} /> */}
       </PaginationButton>
       {pageList.map((page: string, i) => {
         return (
@@ -159,7 +160,8 @@ export const Pagination: React.FC<{
         linkToPage={current + 1}
         onPageChange={onPageChange}
       >
-        <ChevronRightIcon disable={isLastPage}></ChevronRightIcon>
+        hoge
+        {/* <ChevronRightIcon disable={isLastPage}></ChevronRightIcon> */}
       </PaginationButton>
     </HStack>
   )

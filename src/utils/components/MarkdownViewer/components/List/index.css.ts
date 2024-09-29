@@ -1,4 +1,4 @@
-import { lineHeight } from '@/utils/styles/text.css'
+import { lineHeight } from 'utils/styles/text.css'
 import { style } from '@vanilla-extract/css'
 
 export const ul = style([

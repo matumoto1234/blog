@@ -1,5 +1,5 @@
-import { Article } from '@/models/Article'
-import { extractMetaData, getBody } from '@/utils/lib/markdown'
+import { Article } from 'models/Article'
+import { extractMetaData, getBody } from 'utils/lib/markdown'
 import { ErrorKind, ErrorWrapper } from './errors'
 
 export const getArticle = async (

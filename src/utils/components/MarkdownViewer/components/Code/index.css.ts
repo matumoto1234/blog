@@ -4,8 +4,8 @@ import {
   fontSize,
   fontWeight,
   lineHeight,
-} from '@/utils/styles/text.css'
-import { color } from '@/utils/styles/variables.css'
+} from 'utils/styles/text.css'
+import { color } from 'utils/styles/variables.css'
 
 export const inlineCode = style([
   fontSize.px14,

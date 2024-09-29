@@ -1,4 +1,4 @@
-import { fcmConfig } from '@/utils/lib/fcm'
+import { fcmConfig } from 'utils/lib/fcm'
 import { initializeApp } from 'firebase/app'
 import { getMessaging, onBackgroundMessage } from 'firebase/messaging/sw'
 

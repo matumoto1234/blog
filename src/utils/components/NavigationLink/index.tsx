@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import Link from 'next/link'
 import { navigationLink, navigationLinkUnderLine } from './index.css'
 
 export const NavigationLink: React.FC<{
@@ -9,9 +9,9 @@ export const NavigationLink: React.FC<{
 }> = ({ active, to, children, className }) => {
   return (
     <div className={className}>
-      <NavLink className={navigationLink} to={to}>
+      <Link className={navigationLink} href={to}>
         {children}
-      </NavLink>
+      </Link>
       {active && <div className={navigationLinkUnderLine} />}
     </div>
   )

@@ -1,4 +1,6 @@
-import { fcmConfig, vapidKey } from '@/utils/lib/fcm'
+'use client'
+
+import { fcmConfig, vapidKey } from 'utils/lib/fcm'
 import { initializeApp } from 'firebase/app'
 import { isSupported, getMessaging, getToken } from 'firebase/messaging'
 import { useState } from 'react'
@@ -8,7 +10,8 @@ import { Tooltip } from '../Tooltip'
 
 const supportsNotification = (): boolean => {
   // https://developer.mozilla.org/ja/docs/Web/API/Notifications_API/Using_the_Notifications_API
-  return 'Notification' in window
+  // return 'Notification' in window
+  return false
 }
 
 export const useNotificationButton = () => {

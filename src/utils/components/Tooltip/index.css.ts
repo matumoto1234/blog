@@ -3,8 +3,8 @@ import {
   fontWeight,
   letterSpacing,
   lineHeight,
-} from '@/utils/styles/text.css'
-import { color } from '@/utils/styles/variables.css'
+} from 'utils/styles/text.css'
+import { color } from 'utils/styles/variables.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({

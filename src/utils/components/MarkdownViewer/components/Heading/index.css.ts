@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
-import { fontSize, fontWeight, lineHeight } from '@/utils/styles/text.css'
-import { color } from '@/utils/styles/variables.css'
+import { fontSize, fontWeight, lineHeight } from 'utils/styles/text.css'
+import { color } from 'utils/styles/variables.css'
 
 export const h1 = style([
   fontWeight.bold,

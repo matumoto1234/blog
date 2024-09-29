@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css'
-import { fontWeight } from '@/utils/styles/text.css'
-import { color } from '@/utils/styles/variables.css'
+import { fontWeight } from 'utils/styles/text.css'
+import { color } from 'utils/styles/variables.css'
 
 export const table = style({
   borderCollapse: 'collapse',

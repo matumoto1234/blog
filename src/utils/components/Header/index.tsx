@@ -1,9 +1,11 @@
 import classNames from 'classnames'
 import { header } from './index.css'
 
-export const Header: React.FC<{
+type Props = {
   children: React.ReactNode
   className: string
-}> = ({ children, className }) => {
+}
+
+export const Header = ({ children, className }: Props) => {
   return <header className={classNames(header, className)}>{children}</header>
 }

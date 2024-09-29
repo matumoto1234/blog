@@ -1,19 +1,3 @@
-import { ReactComponent as PinSvg } from '@/assets/pin.svg'
-import { ReactComponent as FilledPinSvg } from '@/assets/filled-pin.svg'
-import { ReactComponent as ChevronLeftSvg } from '@/assets/chevron-left.svg'
-import { ReactComponent as ChevronRightSvg } from '@/assets/chevron-right.svg'
-import { ReactComponent as EllipsisSvg } from '@/assets/ellipsis.svg'
-import { ReactComponent as MatumotoSvg } from '@/assets/matumoto.svg'
-import { ReactComponent as TwitterSvg } from '@/assets/twitter.svg'
-import { ReactComponent as GithubSvg } from '@/assets/github.svg'
-import { ReactComponent as SpeakerDeckSvg } from '@/assets/speaker-deck.svg'
-import { ReactComponent as QiitaSvg } from '@/assets/qiita.svg'
-import { ReactComponent as HatenaSvg } from '@/assets/hatena.svg'
-import { ReactComponent as ConnpassSvg } from '@/assets/connpass.svg'
-import { ReactComponent as ZennSvg } from '@/assets/zenn.svg'
-import { ReactComponent as AtcoderSvg } from '@/assets/atcoder.svg'
-import { ReactComponent as NotificationActiveSvg } from '@/assets/notification-active.svg'
-import { ReactComponent as NotificationOffSvg } from '@/assets/notification-off.svg'
 import {
   chevronLeftIcon,
   chevronLeftIconDisabled,
@@ -32,8 +16,8 @@ import {
   atcoderIcon,
   notificationIcon,
 } from './index.css'
-import { color } from '@/utils/styles/variables.css'
-import React from 'react'
+import { color } from 'utils/styles/variables.css'
+import Image from 'next/image'
 
 export const NotificationIcon: React.FC<{
   active: boolean
@@ -41,9 +25,19 @@ export const NotificationIcon: React.FC<{
   return (
     <div className={notificationIcon}>
       {active ? (
-        <NotificationActiveSvg fill={color.navy} />
+        <Image
+          src="/icons/notification-active.svg"
+          alt="notification active icon"
+          width={32}
+          height={32}
+        />
       ) : (
-        <NotificationOffSvg fill={color.gray} />
+        <Image
+          src="/icons/notification-off.svg"
+          alt="notification off icon"
+          width={24}
+          height={24}
+        />
       )}
     </div>
   )
@@ -55,124 +49,129 @@ export const PinIcon: React.FC<{
   return (
     <div className={pinIcon}>
       {enable ? (
-        <FilledPinSvg fill={color.navy} />
+        <Image
+          src="/icons/pin.svg"
+          alt="pin active icon"
+          width={24}
+          height={24}
+        />
       ) : (
-        <PinSvg fill={color.gray} />
+        <Image src="/icons/pin.svg" alt="pin off icon" width={24} height={24} />
       )}
     </div>
   )
 }
 
-export type ChevronIconProps = {
-  disable: boolean
-}
+// export type ChevronIconProps = {
+//   disable: boolean
+// }
 
-export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({ disable }) => {
-  if (disable) {
-    return (
-      <div className={chevronLeftIconDisabled}>
-        <ChevronLeftSvg fill={color.blackA20} />
-      </div>
-    )
-  }
-  return (
-    <div className={chevronLeftIcon}>
-      <ChevronLeftSvg fill={color.navy} />
-    </div>
-  )
-}
+// export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({ disable }) => {
+//   if (disable) {
+//     return (
+//       <div className={chevronLeftIconDisabled}>
+//         <ChevronLeftSvg fill={color.blackA20} />
+//       </div>
+//     )
+//   }
+//   return (
+//     <div className={chevronLeftIcon}>
+//       <ChevronLeftSvg fill={color.navy} />
+//     </div>
+//   )
+// }
 
-export const ChevronRightIcon: React.FC<ChevronIconProps> = ({ disable }) => {
-  if (disable) {
-    return (
-      <div className={chevronRightIconDisabled}>
-        <ChevronRightSvg fill={color.blackA20} />
-      </div>
-    )
-  }
-  return (
-    <div className={chevronRightIcon}>
-      <ChevronRightSvg fill={color.navy} />
-    </div>
-  )
-}
+// export const ChevronRightIcon: React.FC<ChevronIconProps> = ({ disable }) => {
+//   if (disable) {
+//     return (
+//       <div className={chevronRightIconDisabled}>
+//         <ChevronRightSvg fill={color.blackA20} />
+//       </div>
+//     )
+//   }
+//   return (
+//     <div className={chevronRightIcon}>
+//       <ChevronRightSvg fill={color.navy} />
+//     </div>
+//   )
+// }
 
-export const EllipsisIcon: React.FC = () => {
-  return (
-    <div className={ellipsisIcon}>
-      <EllipsisSvg />
-    </div>
-  )
-}
+// export const EllipsisIcon: React.FC = () => {
+//   return (
+//     <div className={ellipsisIcon}>
+//       <EllipsisSvg />
+//     </div>
+//   )
+// }
 
-export const MatumotoIcon: React.FC = () => {
-  return (
-    <div className={matumotoIcon}>
-      <MatumotoSvg />
-    </div>
-  )
-}
+// export const MatumotoIcon: React.FC = () => {
+//   return (
+//     <div className={matumotoIcon}>
+//       <MatumotoSvg />
+//     </div>
+//   )
+// }
 
-export const TwitterIcon: React.FC = () => {
-  return (
-    <div className={twitterIcon}>
-      <TwitterSvg />
-    </div>
-  )
-}
+// export const TwitterIcon: React.FC = () => {
+//   return (
+//     <div className={twitterIcon}>
+//       <TwitterSvg />
+//     </div>
+//   )
+// }
 
-export const GithubIcon: React.FC = () => {
-  return (
-    <div className={githubIcon}>
-      <GithubSvg />
-    </div>
-  )
-}
+// export const GithubIcon: React.FC = () => {
+//   return (
+//     <div className={githubIcon}>
+//       <GithubSvg />
+//     </div>
+//   )
+// }
 
-export const SpeakerDeckIcon: React.FC = () => {
-  return (
-    <div className={speakerDeckIcon}>
-      <SpeakerDeckSvg />
-    </div>
-  )
-}
+// export const SpeakerDeckIcon: React.FC = () => {
+//   return (
+//     <div className={speakerDeckIcon}>
+//       <SpeakerDeckSvg />
+//     </div>
+//   )
+// }
 
-export const QiitaIcon: React.FC = () => {
-  return (
-    <div className={qiitaIcon}>
-      <QiitaSvg />
-    </div>
-  )
-}
+// export const QiitaIcon: React.FC = () => {
+//   return (
+//     <div className={qiitaIcon}>
+//       <QiitaSvg />
+//     </div>
+//   )
+// }
 
-export const HatenaIcon: React.FC = () => {
-  return (
-    <div className={hatenaIcon}>
-      <HatenaSvg />
-    </div>
-  )
-}
+// export const HatenaIcon: React.FC = () => {
+//   return (
+//     <div className={hatenaIcon}>
+//       <HatenaSvg />
+//     </div>
+//   )
+// }
 
-export const ConnpassIcon: React.FC = () => {
-  return (
-    <div className={connpassIcon}>
-      <ConnpassSvg />
-    </div>
-  )
-}
+// export const ConnpassIcon: React.FC = () => {
+//   return (
+//     <div className={connpassIcon}>
+//       <ConnpassSvg />
+//     </div>
+//   )
+// }
 
-export const ZennIcon: React.FC = () => {
-  return (
-    <div className={zennIcon}>
-      <ZennSvg />
-    </div>
-  )
-}
+// export const ZennIcon: React.FC = () => {
+//   return (
+//     <div className={zennIcon}>
+//       <ZennSvg />
+//     </div>
+//   )
+// }
 
-export const AtcoderIcon: React.FC = () => {
-  return (
-    <div className={atcoderIcon}>
-      <AtcoderSvg />
-    </div>
-  )
-}
+// export const AtcoderIcon: React.FC = () => {
+//   return (
+//     <div className={atcoderIcon}>
+//       <AtcoderSvg />
+//     </div>
+//   )
+// }

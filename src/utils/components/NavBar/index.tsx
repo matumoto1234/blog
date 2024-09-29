@@ -1,10 +1,11 @@
-import { isInAbout, isInHome } from '@/Router'
-import { Header } from '@/utils/components/Header'
-import { PinIcon } from '@/utils/components/Icon'
-import { NavigationLink } from '@/utils/components/NavigationLink'
-import { Spacer, StretchSpacer } from '@/utils/components/Spacer'
-import { HStack } from '@/utils/components/Stack'
-import { useState } from 'react'
+'use client'
+
+// import { isInAbout, isInHome } from '@/Router'
+import { Header } from 'utils/components/Header'
+import { PinIcon } from 'utils/components/Icon'
+import { NavigationLink } from 'utils/components/NavigationLink'
+import { Spacer, StretchSpacer } from 'utils/components/Spacer'
+import { HStack } from 'utils/components/Stack'
 import {
   navBar,
   navBarItemContainer,
@@ -17,6 +18,7 @@ import {
   NotificationButton,
   useNotificationButton,
 } from '../NotificationButton'
+import { useState } from 'react'
 
 const useNavBar = (): {
   sticky: boolean
@@ -55,13 +57,17 @@ export const NavBar: React.FC = () => {
             style={{ gap: 16, alignItems: 'center' }}
             className={navLinkList}
           >
-            <NavigationLink className={navLink} to="/home" active={isInHome()}>
+            <NavigationLink
+              className={navLink}
+              to="/"
+              active={/*isInHome()*/ false}
+            >
               Home
             </NavigationLink>
             <NavigationLink
               className={navLink}
               to="/about"
-              active={isInAbout()}
+              active={/*isInAbout()*/ false}
             >
               About
             </NavigationLink>

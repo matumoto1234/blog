@@ -1,5 +1,5 @@
-import { lineHeight } from '@/utils/styles/text.css'
-import { color } from '@/utils/styles/variables.css'
+import { lineHeight } from 'utils/styles/text.css'
+import { color } from 'utils/styles/variables.css'
 import { style } from '@vanilla-extract/css'
 
 export const markdownViewer = style({

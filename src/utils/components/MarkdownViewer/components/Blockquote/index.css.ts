@@ -1,4 +1,4 @@
-import { color } from '@/utils/styles/variables.css'
+import { color } from 'utils/styles/variables.css'
 import { style } from '@vanilla-extract/css'
 
 export const blockquote = style({
