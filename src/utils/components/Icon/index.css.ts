@@ -1,6 +1,5 @@
 import { color } from 'utils/styles/variables.css'
 import { style } from '@vanilla-extract/css'
-import { recipe } from '@vanilla-extract/recipes'
 
 const iconBase = {
   height: '40px',
@@ -14,8 +13,14 @@ export const notificationIcon = style({
   ...iconBase,
 })
 
-export const pinIcon = style({
+export const pinActiveIcon = style({
   ...iconBase,
+  fill: color.navy,
+})
+
+export const pinOffIcon = style({
+  ...iconBase,
+  fill: color.gray,
 })
 
 export const chevronLeftIcon = style({

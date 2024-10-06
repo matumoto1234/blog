@@ -19,6 +19,7 @@
   "dependencies": {
     "@jridgewell/sourcemap-codec": "^1.4.15",
     "@mojotech/json-type-validation": "^3.1.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/js-yaml": "^4.0.5",
     "@types/react-syntax-highlighter": "^15.5.5",
     "@uiw/react-md-editor": "^3.20.2",

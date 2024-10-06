@@ -8,7 +8,8 @@ import {
   githubIcon,
   hatenaIcon,
   matumotoIcon,
-  pinIcon,
+  pinActiveIcon,
+  pinOffIcon,
   qiitaIcon,
   speakerDeckIcon,
   twitterIcon,
@@ -16,8 +17,8 @@ import {
   atcoderIcon,
   notificationIcon,
 } from './index.css'
-import { color } from 'utils/styles/variables.css'
 import Image from 'next/image'
+import Pin from '../../../../public/icons/pin.svg'
 
 export const NotificationIcon: React.FC<{
   active: boolean
@@ -35,8 +36,8 @@ export const NotificationIcon: React.FC<{
         <Image
           src="/icons/notification-off.svg"
           alt="notification off icon"
-          width={24}
-          height={24}
+          width={32}
+          height={32}
         />
       )}
     </div>
@@ -47,39 +48,40 @@ export const PinIcon: React.FC<{
   enable: boolean
 }> = ({ enable }) => {
   return (
-    <div className={pinIcon}>
-      {enable ? (
-        <Image
-          src="/icons/pin.svg"
-          alt="pin active icon"
-          width={24}
-          height={24}
-        />
-      ) : (
-        <Image src="/icons/pin.svg" alt="pin off icon" width={24} height={24} />
-      )}
+    <div className={enable ? pinActiveIcon : pinOffIcon}>
+      <Pin />
     </div>
   )
 }
 
-// export type ChevronIconProps = {
-//   disable: boolean
-// }
+export type ChevronIconProps = {
+  disable: boolean
+}
 
-// export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({ disable }) => {
-//   if (disable) {
-//     return (
-//       <div className={chevronLeftIconDisabled}>
-//         <ChevronLeftSvg fill={color.blackA20} />
-//       </div>
-//     )
-//   }
-//   return (
-//     <div className={chevronLeftIcon}>
-//       <ChevronLeftSvg fill={color.navy} />
-//     </div>
-//   )
-// }
+export const ChevronLeftIcon: React.FC<ChevronIconProps> = ({ disable }) => {
+  if (disable) {
+    return (
+      <div className={chevronLeftIconDisabled}>
+        <Image
+          src="/icons/chevron-left-off.svg"
+          alt="chevron left disable icon"
+          width={32}
+          height={32}
+        />
+      </div>
+    )
+  }
+  return (
+    <div className={chevronLeftIcon}>
+      <Image
+        src="/icons/chevron-left-active.svg"
+        alt="chevron left active icon"
+        width={32}
+        height={32}
+      />
+    </div>
+  )
+}
 
 // export const ChevronRightIcon: React.FC<ChevronIconProps> = ({ disable }) => {
 //   if (disable) {

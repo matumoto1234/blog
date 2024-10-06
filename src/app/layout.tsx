@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import './layout.css'
 import { NavBar } from '@/utils/components/NavBar'
+import { Footer } from '@/utils/components/Footer'
+import { CopyRight } from '@/utils/components/CopyRight'
 
 export const metadata: Metadata = {
   title: 'matumoto blog',
@@ -92,10 +94,11 @@ export default function RootLayout({
         <title>matumoto blog</title>
       </head>
       <body>
-        <div id="root">
-          <NavBar />
-          {children}
-        </div>
+        <NavBar />
+        <div id="root">{children}</div>
+        <Footer>
+          <CopyRight />
+        </Footer>
       </body>
     </html>
   )
