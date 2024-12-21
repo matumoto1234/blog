@@ -28,7 +28,7 @@ date: 1672741694852
 
 人生初インターンともなる1社目は、エキサイトホールディングス株式会社さんでした。
 
-![excite](https://imgur.com/ArjHLEL.jpg)
+![excite](/articles/2022hurikaeri/excite.jpg)
 
 インターン先の事業部ではJavaを使っていたのですが、実は僕は大学の授業の「JavaⅡ」の単位を落としてしまっています(1敗)。また、それより重要な「Javaでの開発経験」もほとんど無く、競技プログラミングの文脈で少しかじった程度でした。
 
@@ -40,7 +40,7 @@ date: 1672741694852
 
 よく見かける図↓
 
-![clean architectureの図](https://imgur.com/UOGdYUY.jpg)
+![clean architectureの図](/articles/2022hurikaeri/clean-architecture.jpeg)
 
 (Clean Architecture 達人に学ぶソフトウェアの構造と設計 より)
 
@@ -54,7 +54,7 @@ date: 1672741694852
 
 2社目のインターンは合同会社DMM.comさんでした。  
 
-![dmm](https://imgur.com/0e3PwYZ.jpg)
+![dmm](/articles/2022hurikaeri/dmm.jpg)
 
 インターン先の事業部ではバックエンドにGoを使っていました。他の技術スタックも含め、全体を通してモダンな構成だった印象です。
 
